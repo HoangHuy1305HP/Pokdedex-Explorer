@@ -70,7 +70,7 @@
             <div className="flex justify-center items-center m-10">
                 <div className="lg:flex justify-center gap-20 ">
                     <div>
-                        <img src={pokemon.pokemonsprites[0].sprites.other.home.front_default} className="bg-gray-200 rounded-sm size-[200px] lg:size-[350px]"></img>
+                        <img src={pokemon.pokemonsprites[0].sprites.other.home.front_default} className="bg-gray-200 rounded-sm size-[200px] lg:size-120"></img>
                     </div>
 
                     <div>
