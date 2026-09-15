@@ -72,7 +72,7 @@
                     <div className="flex-shrink-0">
                         <img 
                             src={pokemon.pokemonsprites[0].sprites.other.home.front_default} 
-                            className="bg-gray-200 rounded-sm object-contain size-[200px]"
+                            className="bg-gray-200 rounded-sm object-contain size-[200px] lg:size-[300px]"
                         />
                     </div>
 
