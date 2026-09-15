@@ -72,7 +72,7 @@
                     <div className="flex-shrink-0">
                         <img 
                             src={pokemon.pokemonsprites[0].sprites.other.home.front_default} 
-                            className="bg-gray-200 rounded-sm object-contain size-[200px] lg:size-[450px]"
+                            className="bg-gray-200 rounded-sm object-contain size-[200px]"
                         />
                     </div>
 
@@ -85,7 +85,10 @@
                             const typeStyle = TYPE_NAME[t.type.name] ?? DEFAULT_TYPE;
                                         return (
                                             <div className="flex">
-                                                <li key={t.type.name} className={`${typeStyle.bg} ${typeStyle.color} rounded-sm text-white  text-sm font-bold leading-tight mr-2 py-2 px-3 text-center select-none whitespace-nowrap`}>{t.type.name}</li>
+                                                
+                                                    <li key={t.type.name} className={`${typeStyle.bg} ${typeStyle.color} rounded-sm text-white  text-sm font-bold leading-tight mr-2 py-2 px-3 text-center select-none whitespace-nowrap`}>{t.type.name}</li>
+                                                
+                                                
                                             </div>
                                         
                                         )}
@@ -94,15 +97,18 @@
                         </ul>
                         <div className="mt-6">
                             <h3 className="text-3xl mb-3">Chỉ số</h3>
-                            <ul className="lg:flex">{pokemon.pokemonstats.map((s:any) => {
+                            <ul className="lg:grid grid-cols-3">{pokemon.pokemonstats.map((s:any) => {
                                 const config = STAT_CONFIG[s.stat.name] ?? { label: s.stat.name, icon: null, color: "text-gray-500" };
                                 const Icon = config.icon
                                 return (
                                     <div className="gap-4 mr-4 ">
-                                        <li key={s.stat.name} className={`flex ${config.bg} w-48 gap-2 mt-2 p-2 rounded-sm items-center text-center justify-center`}>
-                                        {Icon && <Icon size={18} className={`${config.color}`}></Icon>}
-                                        <span>{s.base_stat}</span>
-                                    </li>
+                                        <ul className="">
+                                             <li key={s.stat.name} className={`flex ${config.bg} w-48 gap-2 mt-2 p-2 rounded-sm items-center text-center justify-center`}>
+                                                {Icon && <Icon size={18} className={`${config.color}`}></Icon>}
+                                                <span>{s.base_stat}</span>
+                                            </li>
+                                        </ul>
+                                       
                                     </div>
                                     
                                 )
